@@ -50,7 +50,7 @@ public class FakeChieve extends JavaPlugin {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
 
-		if ((cmd.getName().equalsIgnoreCase("fakechieve")) && (args.length >= 3)) {
+		if ((cmd.getName().equalsIgnoreCase("fakechieve")) && (args.length == 3)) {
 			if (sender.hasPermission("fakechieve")) {
 				Player player = gettPlayer(args[0]);
 				String message = args[1];
@@ -162,6 +162,10 @@ public class FakeChieve extends JavaPlugin {
 				}
 
 			}
+			return true;
+		}
+		else if (!sender.hasPermission("fakechieve")) {
+			noPerms(sender);
 			return true;
 		}
 

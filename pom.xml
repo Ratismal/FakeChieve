@@ -4,6 +4,8 @@
 	<groupId>io.github.ratismal</groupId>
 	<artifactId>FakeChieve</artifactId>
 	<build>
+		<defaultGoal>clean install</defaultGoal>
+		<finalName>${project.name}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -23,6 +25,9 @@
 						<goals>
 							<goal>shade</goal>
 						</goals>
+						<configuration>
+							<minimizeJar>true</minimizeJar>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -58,5 +63,5 @@
 	</dependencies>
 
 
-	<version>1.0.2</version>
+	<version>1.0.4</version>
 </project>
